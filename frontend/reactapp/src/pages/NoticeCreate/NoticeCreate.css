@@ -1,0 +1,70 @@
+/* src/pages/notices/NoticeCreate.css */
+.nc-card{
+  max-width: 720px;
+  margin: 24px auto;
+  background: #16181d;
+  border: 1px solid #1e222a;
+  border-radius: 14px;
+  padding: 18px;
+  box-shadow: 0 10px 24px rgba(0,0,0,0.32);
+}
+.nc-header{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  margin-bottom: 12px;
+}
+.nc-title{
+  margin:0;
+  font-size:20px;
+  font-weight:800;
+  color:#e9edf1;
+}
+.nc-actions{
+  display:flex;
+  gap:8px;
+}
+.nc-label{
+  display:block;
+  color:#c9d1d9;
+  font-size:14px;
+  margin-bottom:14px;
+}
+.nc-input, .nc-textarea{
+  width:100%;
+  margin-top:6px;
+  border-radius:10px;
+  border:1px solid #2a2f3a;
+  background:#0f1216;
+  color:#e6e6e6;
+  padding:10px 12px;
+  outline:none;
+  transition: border-color 160ms ease, box-shadow 160ms ease;
+}
+.nc-textarea{
+  resize: vertical;
+  min-height: 160px;
+}
+.nc-input::placeholder, .nc-textarea::placeholder{
+  color:#6b7280;
+}
+.nc-input:focus, .nc-textarea:focus{
+  border-color:#3b82f6;
+  box-shadow:0 0 0 3px rgba(59,130,246,0.2);
+}
+.nc-input[aria-invalid="true"], .nc-textarea[aria-invalid="true"]{
+  border-color:#ef4444;
+  box-shadow:0 0 0 3px rgba(239,68,68,0.18);
+}
+.nc-error{
+  display:block;
+  margin-top:6px;
+  color:#ff7b86;
+  font-size:12px;
+}
+.nc-meta{
+  margin-top:8px;
+  color:#9aa6b2;
+  font-size:13px;
+}

@@ -1,0 +1,129 @@
+/* Wrapper centers the card */
+.auth-wrap {
+  min-height: calc(100vh - 56px); /* navbar 높이만큼 보정했다면 수정 */
+  display: grid;
+  place-items: start center;
+  padding: 48px 16px;
+  background: transparent; /* 페이지 배경을 그대로 사용 */
+}
+
+/* Card */
+.auth-card {
+  width: 100%;
+  max-width: 420px;
+  background: #16181d;
+  border: 1px solid #1e222a;
+  border-radius: 14px;
+  padding: 28px 22px;
+  box-shadow: 0 10px 24px rgba(0,0,0,0.32);
+}
+
+
+/* 전체 요소를 border-box로 (권장) */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* 혹시 전역 적용이 부담되면 카드 내부만 */
+.auth-card, .auth-card * {
+  box-sizing: border-box;
+}
+
+.auth-title {
+  margin: 0 0 18px;
+  font-size: 22px;
+  font-weight: 700;
+  color: #e9edf1;
+}
+
+/* Label + Input */
+.auth-label {
+    width: 100%; 
+    display: block; 
+    color: #c9d1d9;
+    font-size: 14px;
+    margin-bottom: 14px;
+}
+
+.auth-input {
+  margin-top: 6px;
+  width: 100%;
+  height: 40px;
+  border-radius: 10px;
+  border: 1px solid #2a2f3a;
+  background: #0f1216;
+  color: #e6e6e6;
+  padding: 0 12px;
+  outline: none;
+  transition: border-color 160ms ease, box-shadow 160ms ease;
+}
+
+.auth-input::placeholder {
+  color: #6b7280;
+}
+
+.auth-input:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59,130,246,0.2);
+}
+
+.auth-input[aria-invalid="true"] {
+  border-color: #ef4444;
+  box-shadow: 0 0 0 3px rgba(239,68,68,0.18);
+}
+
+/* Error text */
+.auth-error {
+  display: block;
+  margin-top: 6px;
+  color: #ff7b86;
+  font-size: 12px;
+}
+
+/* Buttons */
+.auth-btn {
+  width: 100%;
+  height: 42px;
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 80ms ease, filter 140ms ease, background 140ms ease;
+}
+
+.auth-btn.primary {
+  background: #2b5cff;
+  color: #fff;
+}
+
+.auth-btn.primary:hover {
+  filter: brightness(0.95);
+}
+
+.auth-btn:active {
+  transform: translateY(1px);
+}
+
+/* Footer link text */
+.auth-subtext {
+  margin-top: 14px;
+  text-align: center;
+  color: #a8b3c1;
+  font-size: 14px;
+}
+
+.auth-link {
+  color: #91b4ff;
+  text-decoration: none;
+}
+
+.auth-link:hover {
+  text-decoration: underline;
+}
+
+/* Small screens */
+@media (max-width: 480px) {
+  .auth-card {
+    padding: 22px 16px;
+  }
+}

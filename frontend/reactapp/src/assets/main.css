@@ -1,0 +1,128 @@
+/* ========== Global base (메인 전용) ========== */
+:root{
+  --bg:#0d0f12;
+  --panel:#14171c;
+  --muted:#9aa6b2;
+  --text:#e9edf1;
+  --brand:#2b5cff;
+  --border:#1f2430;
+}
+
+html,body,#root{height:100%;}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+  font-family: system-ui, -apple-system, "Apple SD Gothic Neo", "Noto Sans KR", Segoe UI, Roboto, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* 컨텐츠 기본 래퍼 */
+.container{
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 24px 16px;
+}
+
+/* 히어로(상단 인사/소개 영역) */
+.hero{
+  margin-top: 24px;
+  background: linear-gradient(180deg, #151922, #111419);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 28px 22px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.35);
+}
+.hero-title{
+  margin:0 0 8px;
+  font-size: 28px;
+  font-weight: 800;
+  letter-spacing:.2px;
+}
+.hero-desc{
+  margin:0;
+  color: var(--muted);
+}
+
+/* 카드 그리드(공지/리스트 등 공용) */
+.grid{
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 16px;
+}
+.card{
+  grid-column: span 4;                 /* 3열 */
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 16px;
+  transition: transform .12s ease, border-color .12s ease, box-shadow .12s ease;
+}
+.card:hover{
+  transform: translateY(-2px);
+  border-color: #2a3550;
+  box-shadow: 0 6px 18px rgba(0,0,0,.25);
+}
+.card-title{
+  margin:0 0 6px;
+  font-weight: 700;
+}
+.card-meta{
+  margin:0 0 10px;
+  color: var(--muted);
+  font-size: 13px;
+}
+.card-action{
+  display:flex;
+  gap:8px;
+  margin-top:12px;
+}
+.btn{
+  display: inline-flex;          
+  align-items: center;           /* 수직 중앙 */
+  justify-content: center;       /* 수평 중앙 */
+  height: 36px;
+  padding: 0 14px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: #0f1216;
+  color: var(--text);
+  font-weight: 600;
+  line-height: 1;                /* 폰트 라인 높이 영향 제거 */
+  text-decoration: none;         /* <Link> 밑줄 제거 */
+  cursor: pointer;
+  transition: transform 80ms ease, filter 140ms ease, background 140ms ease;
+}
+
+/* 이미 있다면 유지 */
+.btn.primary{
+  background: var(--brand);
+  border-color: transparent;
+.btn.primary:hover{ filter:brightness(.95); }
+}
+
+/* 공백이 큰 섹션 여백 */
+.section{
+  margin-top: 28px;
+}
+
+/* 반응형 */
+@media (max-width: 1024px){
+  .card{ grid-column: span 6; }        /* 2열 */
+}
+@media (max-width: 640px){
+  .container{ padding: 16px 12px; }
+  .hero{ padding: 20px 16px; }
+  .hero-title{ font-size: 22px; }
+  .grid{ gap:12px; }
+  .card{ grid-column: span 12; }       /* 1열 */
+}
+
+/* 폼/표 등이 넘치지 않게 */
+.container, .hero, .card{ overflow:hidden; }
+
+/* 유틸 */
+.muted{ color:var(--muted); }
+.spacer{ height:16px; }

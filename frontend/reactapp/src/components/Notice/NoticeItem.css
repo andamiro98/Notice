@@ -1,0 +1,175 @@
+.notice{
+  background: #14171c;
+  border: 1px solid #1f2430;
+  border-radius: 14px;
+  padding: 14px 16px;
+  transition: transform .12s ease, border-color .12s ease, box-shadow .12s ease;
+}
+.notice:hover{
+  transform: translateY(-2px);
+  border-color: #2a3550;
+  box-shadow: 0 6px 18px rgba(0,0,0,.25);
+}
+
+.notice__header{
+  display:flex;
+  align-items: baseline;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.notice__title{
+  margin: 0;
+  font-size: 18px;
+  font-weight: 700;
+  color: #e9edf1;
+}
+
+.notice__meta{
+  display:flex;
+  align-items:center;
+  gap: 8px;
+  color:#9aa6b2;
+  font-size: 13px;
+}
+
+/* 액션 영역 */
+.notice__actions{
+  display:flex;
+  gap:8px;
+  margin-top:12px;
+  justify-content:flex-end; /* 오른쪽 정렬 */
+}
+
+/* 카드 내부 버튼 크기 톤 맞춤 */
+.notice__btn{
+  height:32px;
+  padding:0 12px;
+  border-radius:8px;
+  border:1px solid #1f2430;
+  background:#0f1216;
+  color:#e9edf1;
+  font-weight:600;
+  cursor:pointer;
+  transition:transform 80ms ease, filter 140ms ease, background 140ms ease, border-color 140ms ease;
+}
+.notice__btn:hover{
+  filter:brightness(0.98);
+  border-color:#2a3550;
+}
+.notice__btn:active{ transform: translateY(1px); }
+
+/* 위험(삭제) 버튼 */
+.btn.danger{
+  background:#d04a4a;
+  border-color:transparent;
+  color:#fff;
+}
+.btn.danger:hover{ filter:brightness(0.95); }
+
+
+.notice__user{ color:#b6c3d1; }
+.notice__dot{ opacity:.6; }
+.notice__time{ letter-spacing:.2px; }
+
+.notice__body{
+  margin: 8px 0 0;
+  color: #c9d1d9;
+  line-height: 1.5;
+  white-space: pre-line;       /* \n 유지 */
+}
+
+/* 그리드에 넣을 때 카드 간격 */
+.notice + .notice{ margin-top: 12px; }
+
+/* ===== Modal (Info) ===== */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+}
+
+.modal-card {
+  width: min(480px, 92vw);
+  background: #171a1f;
+  color: #e9edf1;
+  border: 1px solid #242a33;
+  border-radius: 14px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.45);
+  overflow: hidden;
+}
+
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 16px;
+  border-bottom: 1px solid #242a33;
+}
+
+.modal-title {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.modal-close {
+  background: transparent;
+  border: none;
+  color: #c9d1d9;
+  font-size: 22px;
+  line-height: 1;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 8px;
+}
+.modal-close:hover { background: #1d212a; color: #fff; }
+
+.modal-body {
+  padding: 16px;
+}
+
+.modal-dl {
+  margin: 0;
+}
+.modal-row {
+  display: grid;
+  grid-template-columns: 90px 1fr;
+  gap: 8px 12px;
+  padding: 8px 0;
+  border-bottom: 1px dashed #242a33;
+}
+.modal-row:last-child {
+  border-bottom: none;
+}
+.modal-row dt {
+  color: #aab3bf;
+}
+.modal-row dd {
+  margin: 0;
+  word-break: break-all;
+}
+
+.modal-footer {
+  padding: 12px 16px;
+  border-top: 1px solid #242a33;
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+/* 버튼 기본 스타일이 있다면 재사용, 없으면 최소한의 스타일 */
+.btn {
+  height: 36px;
+  padding: 0 14px;
+  border-radius: 8px;
+  border: 1px solid #2b2f37;
+  background: #1d212a;
+  color: #e9edf1;
+  cursor: pointer;
+}
+.btn:hover { background: #222632; }

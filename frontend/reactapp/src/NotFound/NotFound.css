@@ -1,0 +1,79 @@
+/* 가운데 정렬은 그대로 */
+.nf-root{
+  min-height: calc(100vh - 56px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 16px;
+  text-align: center;
+}
+.nf-box{}
+
+/* ✨ 홀로그램 텍스트 링크 */
+.nf-title,
+.nf-title:link,
+.nf-title:visited,
+.nf-title:hover,
+.nf-title:active{
+  display: inline-block;
+  margin: 0;
+  font-size: 56px;              /* 원하면 48~64로 조절 */
+  font-weight: 900;
+  letter-spacing: .4px;
+  text-decoration: none;        /* 밑줄 제거 */
+  cursor: pointer;
+
+  /* 그라디언트를 텍스트에만 채우기 */
+  background: linear-gradient(
+      120deg,
+      #9cc3ff 0%,
+      #b892ff 22%,
+      #ffd6a5 45%,
+      #86fec6 66%,
+      #9cc3ff 100%
+  );
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+
+  /* 은은한 글로우 */
+  text-shadow:
+    0 0 8px rgba(156,195,255,.25),
+    0 0 18px rgba(184,146,255,.18);
+  animation: holoShift 6s ease-in-out infinite;
+  transition: filter .2s ease, text-shadow .2s ease, transform .15s ease;
+}
+
+/* 호버 시 밝기/글로우 살짝 강화 */
+.nf-title:hover{
+  filter: brightness(1.05);
+  text-shadow:
+    0 0 10px rgba(156,195,255,.35),
+    0 0 24px rgba(184,146,255,.28);
+  transform: translateY(-1px);
+}
+
+/* 키보드 접근성: 포커스 링 */
+.nf-title:focus-visible{
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(59,130,246,.35);
+  border-radius: 10px;
+}
+
+/* 홀로그램 쉬프트 애니메이션 */
+@keyframes holoShift{
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* 모션 최소화 환경에서는 애니메이션 비활성화 */
+@media (prefers-reduced-motion: reduce){
+  .nf-title{ animation: none; }
+}
+
+/* 모바일에서 크기 살짝 축소 */
+@media (max-width: 480px){
+  .nf-title{ font-size: 42px; }
+}

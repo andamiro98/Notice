@@ -1,0 +1,159 @@
+/* --- Layout --- */
+.navbar  {
+  position: sticky;           /* 스크롤해도 상단 고정 */
+  top: 0;
+  z-index: 1000;
+  background: #111317;        /* 다크 배경 */
+  border-bottom: 1px solid #1e222a;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+}
+
+.nav-inner {
+  width: 100%;
+  height: 56px;
+  margin: 0;
+  padding: 0 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+/* --- Links --- */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-right: 40px;
+}
+
+.nav-link {
+  display: inline-flex;
+  align-items: center;
+  height: 36px;
+  padding: 0 14px;
+  border-radius: 8px;
+
+  color: #c9d1d9;
+  text-decoration: none;
+  font-weight: 500;
+
+  transition: background 160ms ease, color 160ms ease, transform 80ms ease;
+  border: 0;
+  background: transparent;
+  -webkit-appearance: none;
+  appearance: none;
+  cursor: pointer;
+
+}
+
+.nav-link:hover {
+  background: #1d212a;        /* 살짝 밝은 다크 */
+  color: #ffffff;
+}
+
+.nav-link:active {
+  transform: translateY(1px);
+}
+
+/* 키보드 접근성 */
+.nav-link:focus-visible {
+  outline: 2px solid #6ea8fe; /* 파란 포커스 링 */
+  outline-offset: 2px;
+}
+
+
+/* 브랜드 링크(클릭 가능) */
+.brand-link{
+  display: inline-flex;
+  align-items: center;
+  height: 36px;
+  padding: 0 10px;          /* 클릭 영역 확장 */
+  border-radius: 8px;
+  color: #e9edf1;
+  font-weight: 700;
+  letter-spacing: .2px;
+  text-decoration: none;
+  cursor: pointer;          /* 마우스 포인터 */
+  transition: color 160ms ease, background 160ms ease, transform 80ms ease;
+}
+
+.brand-link:hover{
+  background: #1d212a;      /* 호버 배경 */
+  color: #ffffff;           /* 호버 색상 */
+}
+
+.brand-link:active{
+  transform: translateY(1px);
+}
+
+/* 키보드 접근성 */
+.brand-link:focus-visible{
+  outline: 2px solid #6ea8fe;
+  outline-offset: 2px;
+}
+
+
+
+/* --- Small screens --- */
+@media (max-width: 520px) {
+  .nav-inner {
+    height: auto;
+    padding: 10px 12px;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+  }
+
+  .brand {
+    text-align: center;
+  }
+
+  .nav-links {
+    justify-content: center;
+  }
+
+  .nav-link {
+    flex: 1 0 auto;
+    justify-content: center;
+    min-width: 44px;          /* 터치 타겟 확보 */
+  }
+}
+
+
+
+/* 버튼 리셋만: 먼저 배치 */
+button.btn {
+  -webkit-appearance: none;
+  appearance: none;
+  border: 0;
+  background: transparent;
+  font-family: inherit;   /* ← 전체가 아니라 family만 상속 */
+  line-height: 1;
+  color: inherit;
+}
+
+/* 공통 스타일: 나중에 배치 */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  height: 36px;
+  padding: 0 14px;
+  border-radius: 8px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background .16s, color .16s, transform .08s;
+}
+
+.btn:hover { background: #1d212a; color: #fff; }
+.btn:active { transform: translateY(1px); }
+.btn:focus-visible { outline: 2px solid #6ea8fe; outline-offset: 2px; }
+
+/* 프라이머리 변형 */
+.btn-primary { background: #2b5cff; color: #fff; }
+.btn-primary:hover { background: #234be0; }
+.btn-primary:active { background: #1c3dc2; }
+
+
+/* (Firefox) 버튼 내부 여백 제거 */
+button.btn::-moz-focus-inner { border: 0; padding: 0; }
