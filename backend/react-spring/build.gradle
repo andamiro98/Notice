@@ -46,14 +46,9 @@ test {
     useJUnitPlatform()
 }
 
-sourceSets {
-    main {
-        resources { srcDirs = ["$projectDir/src/main/resources"]
-        }
-    }
-}
 
-def frontendDir = "/Users/kim/dev/notice_project/frontend/reactapp"
+
+def frontendDir = "$projectDir/../../frontend/reactapp"
 
 sourceSets {
     main {
