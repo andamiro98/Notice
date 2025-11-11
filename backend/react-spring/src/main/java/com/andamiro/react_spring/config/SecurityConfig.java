@@ -24,7 +24,15 @@ public class SecurityConfig {
         http.csrf(AbstractHttpConfigurer::disable) //http.csrf(csrf -> csrf.disable())
                 .cors(cors -> {})
         // CSRF(Cross-Site Request Forgery) 공격 방지 기능
-                .authorizeHttpRequests(authorizeRequests -> authorizeRequests
+                .authorizeHttpRequests(auth -> auth
+                        .requestMatchers(
+                                "/",
+                                "/index.html",
+                                "/static/**",
+                                "/assets/**",
+                                "/favicon.ico"
+                        ).permitAll()
+
                         .requestMatchers(
                                 "/api/auth/signup",
                                 "/api/auth/signin",
