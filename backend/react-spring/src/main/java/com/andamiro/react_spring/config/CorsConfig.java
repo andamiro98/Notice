@@ -12,7 +12,8 @@ public class CorsConfig {
     @Bean
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration corsConfiguration = new CorsConfiguration();
-        corsConfiguration.addAllowedOrigin("http://localhost:5173"); // 허용할 클라이언트 도메인
+        //corsConfiguration.addAllowedOrigin("http://localhost:5173"); // 허용할 클라이언트 도메인
+        corsConfiguration.addAllowedOrigin("http://3.36.1.167:8080"); // 허용할 클라이언트 도메인
         corsConfiguration.addAllowedMethod("*"); // 모든 HTTP 메서드를 허용 (GET, POST, PUT, DELETE)
         corsConfiguration.addAllowedHeader("*"); // 모든 헤더 사용
         corsConfiguration.setAllowCredentials(true); // 쿠키 cross-origin으로 전달 (쿠키 기반 인증)
