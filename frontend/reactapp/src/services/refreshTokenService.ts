@@ -5,7 +5,7 @@ import axios from "axios";
 export const requestRefreshToken = async () => {
     try{
         await axios.post(
-            "http://localhost:8080/api/auth/refresh",
+            "http://3.36.1.167:8080/api/auth/refresh",
             {},
             {withCredentials:true}
         )

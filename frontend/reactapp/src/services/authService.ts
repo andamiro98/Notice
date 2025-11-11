@@ -1,6 +1,7 @@
 import axios from "axios"
 
-const APL_URL = "http://localhost:8080/api/auth";
+//const APL_URL = "http://localhost:8080/api/auth";
+const APL_URL = "http://3.36.1.167:8080/api/auth";
 
 // 로그인
 export const signin = async (email: string, password: string) => {

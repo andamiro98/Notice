@@ -10,7 +10,7 @@ export const SignUp = () => {
         email: string;
         password: string;
         confirm: string;
-    };
+    }
 
     const [form, setForm] = useState<SignUpForm>({
     nickname: "",
@@ -36,7 +36,7 @@ export const SignUp = () => {
   }
 
     try{    
-      await axios.post("http://localhost:8080/api/auth/signup", {
+      await axios.post("http://3.36.1.167:8080/api/auth/signup", {
         email,
         password,
         nickname

@@ -72,13 +72,12 @@ export const NoticeCreate = () => {
 
 
 
-
   const onsubmit = async(e:FormEvent) =>{
     e.preventDefault();
 
     try{
       await axios.post(
-        "http://localhost:8080/api/notice",
+        "http://3.36.1.167:8080/api/notice",
         payload
       )
       alert("작성 완료")

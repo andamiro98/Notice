@@ -25,7 +25,7 @@ export const Home = () => {
   useEffect(()=>{
     const getNotice = async() =>{
       try{
-        const response = await axios.get("http://localhost:8080/api/notice",{
+        const response = await axios.get("http://3.36.1.167:8080/api/notice",{
           withCredentials:true,
         });
         setNotices(response.data);
@@ -38,7 +38,7 @@ export const Home = () => {
 
 const onDelete = async(id:string) =>{
   try{
-    await axios.delete(`http://localhost:8080/api/notice/${id}`,{
+    await axios.delete(`http://3.36.1.167:8080/api/notice/${id}`,{
         withCredentials:true,
       });
       

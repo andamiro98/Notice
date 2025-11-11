@@ -22,7 +22,7 @@ export const NoticeUpdate = () => {
     const fetchNotice = async() => {
       try{
         const res = await axios.get(
-          `http://localhost:8080/api/notice/${id}`,
+          `http://3.36.1.167:8080/api/notice/${id}`,
           { withCredentials: true}
         );
         const {title, content, nickname} = res.data;
@@ -50,7 +50,7 @@ export const NoticeUpdate = () => {
 
     try{
       await axios.put(
-        `http://localhost:8080/api/notice/${id}`,
+        `http://3.36.1.167:8080/api/notice/${id}`,
          updatenotice,
          {withCredentials:true}
       )
